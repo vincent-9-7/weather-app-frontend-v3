@@ -1,0 +1,19 @@
+.homePage__webName--enter-true {
+  display: none;
+}
+
+.homePage__webName--enter-false {
+  position: absolute;
+  z-index: 999;
+  color: azure;
+  top: 30%;
+  left: 8.5%;
+}
+
+.homePage__webName--enter-false h1 {
+  font-size: 2.6875rem;
+}
+
+.homePage__webName--enter-false .fa-cloud-rain {
+  padding-left: 1.4rem;
+}

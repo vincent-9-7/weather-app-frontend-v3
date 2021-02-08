@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import NavBar from './components/NavBar/NavBar'
+import MainPage from './pages/MainPage'
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-console */
+/* eslint-disable no-unused-expressions */ 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="navBar">
+        <NavBar />
+      </div>
+
+      <div className="main">
+        <MainPage />
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,245 @@
+.homepage{
+
+    &__SeachBar--enter-true,&__SeachBar--enter-false{    
+        font-size: 21px;
+        line-height: 18px;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 0px;
+
+        transition: transform 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        //输入之前提示文字的样式
+        &::placeholder {
+            color: color(#575756 a(0.8));
+            background-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        //鼠标放在上面和鼠标点击这个搜索栏
+        &:hover,&:focus {
+            background-image:none;
+            background-color: transparent;
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+    }
+
+    //未提交第一次搜索时，搜索栏在左侧
+    &__SeachBar--enter-false {
+        position: absolute;
+        z-index: 999;
+        background-color: azure;
+        left: 8.5%;
+        top:55%;
+        width: 28.75rem;
+        padding: 12px 24px;
+        &:hover,&:focus {
+            color: azure;
+        }
+    }
+
+    //提交第一次搜索后，搜索栏移动到右侧
+    &__SeachBar--enter-true {
+        color: azure;
+        position: absolute;
+        &:hover,&:focus {
+            color: azure;
+        }
+        
+        animation: MoveSearchBar 1.5s ; //进行平移动画 总时长5s  循环播放：infinite
+        animation-fill-mode: forwards; //动画将停在最后一个关键帧的地方，默认是回复到初始关键帧
+        @keyframes MoveSearchBar {
+            0% {
+                left: 8.5%;
+                top:55%;
+                width: 28.75rem;
+                padding: 12px 24px;
+                opacity: 0.8;
+            }
+            33%{
+                left:65%;
+                top:55%;
+                width: 28.75rem;
+                padding: 12px 24px;
+                opacity: 0;
+            }
+            66%{
+                right: 5%;
+                top:35%;
+                width: 28.75rem;
+                padding: 12px 24px;
+                opacity: 0;
+            }
+            100%{
+                right: 7%;
+                top:35%;
+                width: 34rem;
+                padding: 12px 24px;
+                opacity: 1;
+            }
+          }
+    }
+}
+
+
+@media only screen and (max-width: 1400px) {
+    // h1,span{color: red;}
+    .homepage{
+        &__SeachBar--enter-true,&__SeachBar--enter-false{    
+            font-size: 21px;
+            line-height: 18px;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 18px 18px;
+            background-position: 95% center;
+            border-radius: 50px;
+            border: 0px;
+    
+            transition: transform 250ms ease-in-out;
+            transition: all 250ms ease-in-out;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+    
+            //输入之前提示文字的样式
+            &::placeholder {
+                color: color(#575756 a(0.8));
+                background-color: transparent;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+            }
+            //鼠标放在上面和鼠标点击这个搜索栏
+            &:hover,&:focus {
+                background-image:none;
+                background-color: transparent;
+                padding: 12px 0;
+                outline: 0;
+                border: 1px solid transparent;
+                border-bottom: 1px solid #575756;
+                border-radius: 0;
+                background-position: 100% center;
+            }
+        }
+    
+        //未提交第一次搜索时，搜索栏在左侧
+        &__SeachBar--enter-false {
+            position: absolute;
+            z-index: 999;
+            background-color: azure;
+            left: 8.5%;
+            top:55%;
+            width: 28.75rem;
+            padding: 12px 24px;
+            &:hover,&:focus {
+                color: azure;
+            }
+        }
+    
+        //提交第一次搜索后，搜索栏移动到右侧
+        &__SeachBar--enter-true {
+            color: azure;
+            position: absolute;
+            z-index: 999;
+            &:hover,&:focus {
+                color: azure;
+            }
+            
+            animation: MoveSearchBar 1.5s ; //进行平移动画 总时长5s  循环播放：infinite
+            animation-fill-mode: forwards; //动画将停在最后一个关键帧的地方，默认是回复到初始关键帧
+            @keyframes MoveSearchBar {
+                0% {
+                    left: 8.5%;
+                    top:55%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0.8;
+                }
+                33%{
+                    left:29%;
+                    top:55%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0;
+                }
+                66%{
+                    left: 29%;
+                    top:40%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0;
+                }
+                100%{
+                    left: 29%;
+                    top:40%;
+                    width: 38%;
+                    padding: 12px 24px;
+                    opacity: 1;
+                }
+              }
+        }
+    }
+
+}
+
+@media only screen and (max-width:1100px) {
+    // h1,span{color: aqua;}
+}
+
+@media only screen and (max-width:867px) {
+    .homepage{
+    
+        //提交第一次搜索后，搜索栏移动到右侧
+        &__SeachBar--enter-true {
+            color: azure;
+            position: absolute;
+            &:hover,&:focus {
+                color: azure;
+            }
+            
+            animation: MoveSearchBar 1.5s ; //进行平移动画 总时长5s  循环播放：infinite
+            animation-fill-mode: forwards; //动画将停在最后一个关键帧的地方，默认是回复到初始关键帧
+            @keyframes MoveSearchBar {
+                0% {
+                    left: 8.5%;
+                    top:55%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0.8;
+                }
+                33%{
+                    left:12%;
+                    top:55%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0;
+                }
+                66%{
+                    right: 12%;
+                    top:75%;
+                    width: 28.75rem;
+                    padding: 12px 24px;
+                    opacity: 0;
+                }
+                100%{
+                    left: 12%;
+                    top:75%;
+                    width: 34rem;
+                    padding: 12px 24px;
+                    opacity: 1;
+                }
+              }
+        }
+    }
+}

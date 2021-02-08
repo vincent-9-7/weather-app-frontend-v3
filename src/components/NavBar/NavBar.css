@@ -1,0 +1,78 @@
+/* 必须有这个*的内容 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 小屏幕的--面包按钮 */
+/* @media screen and (max-width: 960px) { */
+/* @media screen and (min-width: 0px) { */
+
+.NavbarItems {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+
+/* 显示面包icon的位置 */
+.menu-icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(150%, 60%);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.fa-times {
+  color: #6fa812;
+  /* font-size: 2rem; */
+}
+/* 面包按钮 */
+.fa-bars {
+  color: #6fa812;
+  /* font-size: 2rem; */
+}
+.fa-cloud-rain{
+ 
+}
+
+/* 2.1点击叉叉按钮后，菜单详情都飘走 */
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  transition: all 0.5s ease;
+  list-style: none;
+}
+
+/* 2.2点击面包按钮后，菜单详情都浮动过来 */
+.nav-menu.active {
+  left: 70px;
+  /* top:12px; */
+  transition: all 0.5s ease;
+}
+.nav-links {
+  text-align: center;
+  color:#6fa812;
+  padding: 1.4em;
+  width: 100%;
+  display: table;
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  background-color: #b2e462;
+  border-radius: 0;
+  transition: all 0.2s ease-out;
+}
+
+
