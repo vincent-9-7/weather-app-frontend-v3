@@ -18,10 +18,31 @@ const HomePageBackground = ({videoPlay}) => {
       <div className="homePage__background--image" />
       
       <div className="homePage__player-wrapper">
-        <video autoPlay muted loop id="homePage__myVideo">
+        <video 
+          preload="auto" 
+          laysinline 
+          autoPlay 
+          muted 
+          loop 
+          id="homePage__myVideo"
+        >
           <source src={playVideo} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
+
+        {/* <video 
+          className="video-react-video" 
+          preload="auto" 
+          muted
+          loop
+          playsinline 
+          autoPlay
+          poster="//sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/video-poster_1576231362701.png" 
+          src="//sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/gongquhunjian_1080.min.mp4" 
+          tabIndex="-1"
+        >
+        </video> */}
+
       </div>
     </>
   )
