@@ -151,12 +151,16 @@ class MainPage extends React.Component {
   
   render() {
     const { finalInput,todayTime,todayInfo,sixDayInfo } = this.state
-
     const {enter} = this.state
+    
+    let playVideo = ''
+    if(enter) {
+      playVideo = 'not-play' // 判断Home的video是否播放
+    }
     return(
       <>
         <div className={enter? "homePage__Background--enter-true" : "homePage__Background--enter-false"}>
-          <HomeBackground videoPlay={enter} />
+          <HomeBackground videoPlay={playVideo} />
         </div>
 
         <div className={enter? "homePage__webName--enter-true" : "homePage__webName--enter-false"}>
