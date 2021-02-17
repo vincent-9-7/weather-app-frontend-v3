@@ -65,7 +65,7 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url(../../../../img//sunny.jpg);
+  background-image: url(../../../../assets/img/sunny.jpg);
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
@@ -134,7 +134,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url(../../../../img//sunny.jpg);
+    background-image: url(../../../../assets/img/sunny.jpg);
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;

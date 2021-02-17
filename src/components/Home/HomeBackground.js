@@ -1,8 +1,8 @@
 import React from 'react';
 import './Scss/HomeBackground/HomeBackground.css'
-import video from "../../video/2.mp4"
-// import video from "../../video/3.mp4"
-// import video from "../../video/4.mp4"
+import video from "../../assets/video/2.mp4"
+// import video from "../../assets/video/3.mp4"
+// import video from "../../assets/video/4.mp4"
 
 let playVideo = ""
 
