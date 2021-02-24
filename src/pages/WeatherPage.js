@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import WeatherBackground from '../components/Weather/WeatherBackground'
-import WeatherLeft from '../components/Weather/WeatherLeft';
-import WeatherRight from '../components/Weather/WeatherRight';
+import WeatherLeft from '../components/Weather/WeatherLeft'
+import WeatherRight from '../components/Weather/WeatherRight'
 
 
 // 得到未来六天星期名字
