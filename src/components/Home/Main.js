@@ -1,16 +1,18 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
+import './Scss/MainPage.scss'
+
 import WeatherPage from '../../pages/WeatherPage'
-import './Scss/MainPage/MainPage.css'
-import HomeBackground from "./HomeBackground";
+import HomeBackground from "./HomeBackground"
 import HomeTitle from "./HomeTitle"
+
 import {getLocationApi,getWeatherApi,getGMTApi,getTimeApi,getTimeApiGMT0} from '../../api/Api'
 
-export const getLocation = (currentCity) => axios.get(getLocationApi(currentCity));
-export const getCurrentWeather = (lat,lng) => axios.get(getWeatherApi(lat,lng));
-export const getGMT = (lat,lng) => axios.get(getGMTApi(lat,lng));
-export const getTime = (GMT) => axios.get(getTimeApi(GMT));
-export const getGMT0Time = (GMT) => axios.get(getTimeApiGMT0(GMT));
+export const getLocation = (currentCity) => axios.get(getLocationApi(currentCity))
+export const getCurrentWeather = (lat,lng) => axios.get(getWeatherApi(lat,lng))
+export const getGMT = (lat,lng) => axios.get(getGMTApi(lat,lng))
+export const getTime = (GMT) => axios.get(getTimeApi(GMT))
+export const getGMT0Time = (GMT) => axios.get(getTimeApiGMT0(GMT))
 
 class MainPage extends React.Component {
   constructor(){
@@ -51,22 +53,22 @@ class MainPage extends React.Component {
       this.setState({
         enter:true
       })
-    }, 1000);
+    }, 1000)
   }
 
   getWeather = async (currentCity) => {
     // ------------------第1个api函数----------------
     const mapBoxresponse = await (getLocation(currentCity))
     const {center} = mapBoxresponse.data.features[0]// 解构
-    const lat = center [1];
-    const lng = center [0];
+    const lat = center [1]
+    const lng = center [0]
 
     // ------------------第二个api函数----------------
     const weatherResponse = await (getCurrentWeather(lat,lng))
     // 获取当天的温度 icon description 信息
-    const {current:{temp}} = weatherResponse.data;
-    const {icon:todayIcon, main} = weatherResponse.data.current.weather[0];
-    const todayTemp = temp.toString().split(".")[0];
+    const {current:{temp}} = weatherResponse.data
+    const {icon:todayIcon, main} = weatherResponse.data.current.weather[0]
+    const todayTemp = temp.toString().split(".")[0]
     const todayWeatherInfoList = [
       todayTemp,
       `https://openweathermap.org/img/wn/${todayIcon}@2x.png`,
@@ -84,8 +86,8 @@ class MainPage extends React.Component {
   currentTime = async (currentCity) => {
     const mapBoxresponse = await (getLocation(currentCity))
     const {center} = mapBoxresponse.data.features[0]// 解构
-    const lat = center [1];
-    const lng = center [0];
+    const lat = center [1]
+    const lng = center [0]
 
     const gmtResponse = await (getGMT(lat,lng))
     const {timezone} = gmtResponse.data // 解构

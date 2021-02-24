@@ -1,5 +1,5 @@
-import React from 'react';
-import './Scss/HomeTitle/HomeTitle.css'
+import React from 'react'
+import './Scss/HomeTitle.scss'
 
 
 const HomeTitle = () => (

@@ -1,5 +1,5 @@
-import React from 'react';
-import './Scss/WeatherLeft/WeatherLeft.css'
+import React from 'react'
+import './Scss/WeatherLeft.scss'
 
 const WeatherLeft = ({inputCity,todayInfo,todayTime}) => (
   
