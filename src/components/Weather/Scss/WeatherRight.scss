@@ -1,0 +1,200 @@
+.weather__RightDetail {
+  //*list如果设置ul成absolute，想调下面ul的相对位置，
+  // 把要调的那项元素设置成relative，在用left:20px/top:30px就能调他们位置了
+  //（也可以再设置一个line-height)
+  & ul:nth-child(1) {
+    list-style: none; //删除list前面小黑点
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    margin: 0;
+    padding: 0;
+    width: 35rem;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-image: url(../../../assets/img/sunny.jpg);
+      // background-color: black;
+      background-position: center top;
+      background-size: cover;
+      background-attachment: fixed;
+      -webkit-filter: blur(20px);
+      -moz-filter: blur(20px);
+      -ms-filter: blur(20px);
+      -o-filter: blur(20px);
+      filter: blur(30px);
+    }
+
+    //ul li也可以弹性盒子布局
+    display: flex;
+    flex-direction: column; //排序方式row || column || row-reverse || column-reverse;
+    // justify-content:flex-start; //布局方式flex-end || center || space-between || space-around
+    align-items: center; //弹性项在横轴上的布局方式 flex-start || flex-end|| center || stretch || baseline
+    // align-content: stretch; //将弹性项目“拉伸”适应横轴上的可用空间
+
+    & li {
+      height: 80px; //li的高度，li里面再有每天的细节信息
+
+      & span:nth-child(1) {
+        position: absolute;
+        left: 0%;
+        margin: 2rem 0rem;
+      }
+
+      & span:nth-child(2) {
+        position: absolute;
+        left: 42%;
+        margin: 2rem 0rem;
+        //摄氏度 空心样式
+        &::before {
+          position: absolute;
+          width: 0.24rem;
+          height: 0.24rem;
+          background-color: transparent;
+          left: 100%;
+          border-radius: 50%;
+          content: '';
+          border: solid 0.12875rem;
+        }
+      }
+
+      & span:nth-child(3) {
+        position: absolute;
+        left: 60%;
+        margin: 2rem 0rem;
+        //摄氏度 空心样式
+        &::before {
+          position: absolute;
+          width: 0.24rem;
+          height: 0.24rem;
+          background-color: transparent;
+          left: 100%;
+          border-radius: 50%;
+          content: '';
+          border: solid 0.12875rem;
+        }
+      }
+
+      & img:nth-child(4) {
+        width: 100px;
+        position: relative;
+        left: 200px;
+        top: -5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .weather__RightDetail {
+    & ul:nth-child(1) {
+      list-style: none; //删除list前面小黑点
+      color: white;
+      font-size: 1.5rem;
+      position: absolute;
+      // right: 28%;
+      left: 29%;
+      top: 45%;
+      margin: 0;
+      padding: 0;
+      width: 37%;
+
+      & li {
+        height: 70px; //li的高度，li里面再有每天的细节信息
+
+        & span:nth-child(1) {
+          position: absolute;
+          left: 0%;
+          margin: 2rem 0rem;
+        }
+
+        & span:nth-child(2) {
+          position: absolute;
+          left: 42%;
+          margin: 2rem 0rem;
+          //摄氏度 空心样式
+          &::before {
+            position: absolute;
+            width: 0.24rem;
+            height: 0.24rem;
+            background-color: transparent;
+            left: 100%;
+            border-radius: 50%;
+            content: '';
+            border: solid 0.12875rem;
+          }
+        }
+
+        & span:nth-child(3) {
+          position: absolute;
+          left: 60%;
+          margin: 2rem 0rem;
+        }
+
+        & img:nth-child(4) {
+          width: 100px;
+          position: relative;
+          left: 200%;
+          top: -5px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .weather__RightDetail {
+    //*list如果设置ul成absolute，想调下面ul的相对位置，
+    // 把要调的那项元素设置成relative，在用left:20px/top:30px就能调他们位置了
+    //（也可以再设置一个line-height)
+    & ul:nth-child(1) {
+      color: white;
+      font-size: 1.3rem;
+      width: 30%;
+
+      & li {
+        height: 70px; //li的高度，li里面再有每天的细节信息
+
+        & span:nth-child(1) {
+          position: absolute;
+          left: 10%;
+          margin: 2rem 0rem;
+        }
+
+        & span:nth-child(2) {
+          position: absolute;
+          left: 55%;
+          margin: 2rem 0rem;
+        }
+
+        & span:nth-child(3) {
+          position: absolute;
+          left: 80%;
+          margin: 2rem 0rem;
+        }
+
+        & img:nth-child(4) {
+          width: 50px;
+          position: relative;
+          left: 400%;
+          top: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 867px) {
+  .weather__RightDetail {
+    & ul:nth-child(1) {
+      opacity: 0;
+    }
+  }
+}
