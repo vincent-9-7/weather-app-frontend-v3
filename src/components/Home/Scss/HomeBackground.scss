@@ -1,40 +1,43 @@
-
-.homePage__Background--enter-true{
-    display: none;
+.homePage__Background--enter-true {
+  display: none;
 }
 
-.homePage__Background--enter-false{
-
+.homePage__Background--enter-false {
 }
 
-
-//全屏背景图片样式
+//全屏背景图片样式 1/2
 .homePage__background--image {
-    position:absolute;
-    opacity: 0.3;
-    width:100%; 
-    height:100%; 
-    background:rgb(151, 199, 141);
-    // background-image:url(../../img/backgound1.jpg);
-    background-size:cover;
-    z-index: 998;
+  position: absolute;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%; //实际上还是没有长度，用下面100vh好
+  background: rgb(151, 199, 141);
+  // background-image:url(../../img/backgound1.jpg);
+  background-size: cover;
+  z-index: 998;
 }
 
+//全屏背景图片样式 2/2 如果不用absolute就不会文件流断层，这个比较好
+.not-absolute-background-style {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url(../../../assets/cleaner1.jpg);
+  background-size: cover;
+  min-height: 100vh; //100vh就是100%浏览器屏幕大小，有实际长度了，100%的话没有长度
+}
 
 //ByteDance首页视频样式！！
-.homePage__player-wrapper{
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%; 
-    min-height: 100%; 
-    // overflow: hidden;
-    z-index: 998;
+.homePage__player-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  // overflow: hidden;
+  z-index: 998;
 }
-#homePage__myVideo{
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+#homePage__myVideo {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-
