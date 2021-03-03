@@ -20,7 +20,7 @@
 //全屏背景图片样式 2/2 如果不用absolute就不会文件流断层，这个比较好
 .not-absolute-background-style {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-    url(../../../assets/cleaner1.jpg);
+    url(../../../assets/img/backgound1.jpg);
   background-size: cover;
   min-height: 100vh; //100vh就是100%浏览器屏幕大小，有实际长度了，100%的话没有长度
 }
